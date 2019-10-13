@@ -69,30 +69,17 @@ jobs:
       - run:
           name: Push docker image
           command: |
-<<<<<<< HEAD
-              docker push ${ECR_DOMAIN}:$CIRCLE_SHA1
-              docker push ${ECR_DOMAIN}:latest
-=======
             docker push ${ECR_DOMAIN}:$CIRCLE_SHA1
             docker push ${ECR_DOMAIN}:latest
->>>>>>> 90a1ee6d82e3abaf69fceb805dac4a8e6062cd2b
 workflows:
   version: 2
   test:
     jobs:
       - build
       - build_image:
-<<<<<<< HEAD
           requires:
             - build
           filters:
             branches:
               only: master
-=======
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
->>>>>>> 90a1ee6d82e3abaf69fceb805dac4a8e6062cd2b
 
