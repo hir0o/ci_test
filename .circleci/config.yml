@@ -22,9 +22,9 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: bundle update rake
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      # - run: bundle update rake
+      # - run: bundle exec rake db:create
+      # - run: bundle exec rake db:schema:load
       - run:
           name: run tests
           command: |
