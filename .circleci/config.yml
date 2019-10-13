@@ -6,14 +6,16 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
     working_directory: ~/repo
     steps:
-      - checkout
+      - checkout      
       - run: 
               name: bundle update
               command: gem install bundler:2.0.2
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
+            
       - run:
           name: install dependencies
           command: |
@@ -41,7 +43,10 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90a1ee6d82e3abaf69fceb805dac4a8e6062cd2b
   build_image:
     docker:
       - image: docker:18.09.0
@@ -64,16 +69,30 @@ jobs:
       - run:
           name: Push docker image
           command: |
+<<<<<<< HEAD
               docker push ${ECR_DOMAIN}:$CIRCLE_SHA1
               docker push ${ECR_DOMAIN}:latest
+=======
+            docker push ${ECR_DOMAIN}:$CIRCLE_SHA1
+            docker push ${ECR_DOMAIN}:latest
+>>>>>>> 90a1ee6d82e3abaf69fceb805dac4a8e6062cd2b
 workflows:
   version: 2
   test:
     jobs:
       - build
       - build_image:
+<<<<<<< HEAD
           requires:
             - build
           filters:
             branches:
               only: master
+=======
+        requires:
+          - build
+        filters:
+          branches:
+            only: master
+>>>>>>> 90a1ee6d82e3abaf69fceb805dac4a8e6062cd2b
+
