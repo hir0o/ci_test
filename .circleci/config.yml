@@ -6,10 +6,11 @@ jobs:
       - image: circleci/ruby:2.4.1-node-browsers
     working_directory: ~/repo
     steps:
-      - checkout
+      - checkout      
       - run: 
               name: bundle update
               command: gem install bundler:2.0.2
+              
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
