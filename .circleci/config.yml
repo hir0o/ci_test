@@ -10,11 +10,12 @@ jobs:
       - run: 
               name: bundle update
               command: gem install bundler:2.0.2
-              
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             - v1-dependencies-
+            
       - run:
           name: install dependencies
           command: |
