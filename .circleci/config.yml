@@ -43,10 +43,6 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-<<<<<<< HEAD
-
-=======
->>>>>>> 90a1ee6d82e3abaf69fceb805dac4a8e6062cd2b
   build_image:
     docker:
       - image: docker:18.09.0
