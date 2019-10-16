@@ -1,9 +1,9 @@
 require'sinatra'
 
 get '/' do
-  'Hello world!'
+  'Hello world!!!!!!'
 end
 
-get '/health_check' do
-  'ok' 
+get '/about' do
+  'ok'
 end
