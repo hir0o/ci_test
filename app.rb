@@ -1,7 +1,7 @@
 require'sinatra'
 
 get '/' do
-  'Hello world!!!!!!'
+  '文字変更せかんず'
 end
 
 get '/about' do
