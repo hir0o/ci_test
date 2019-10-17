@@ -1,7 +1,7 @@
 require'sinatra'
 
 get '/' do
-  'ハローワールド'
+  'ハローワールド2'
 end
 
 get '/about' do
