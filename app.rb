@@ -1,7 +1,7 @@
 require'sinatra'
 
 get '/' do
-  'ハローワールド2'
+  'コマンドラインでのデプロイテスト'
 end
 
 get '/about' do
