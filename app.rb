@@ -1,7 +1,7 @@
 require'sinatra'
 
 get '/' do
-  'コマンドラインでのデプロイテスト'
+  'Hello World! by CircleCI'
 end
 
 get '/about' do
